@@ -4,6 +4,7 @@ import {
   Validators, FormsModule, ReactiveFormsModule, NonNullableFormBuilder,
 } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { isEqual } from 'lodash-es';
@@ -39,6 +40,7 @@ import { SigninStore } from 'app/pages/signin/store/signin.store';
     TranslateModule,
     IxInputComponent,
     TestDirective,
+    MatProgressSpinnerModule,
   ],
 })
 export class SigninFormComponent implements OnInit {

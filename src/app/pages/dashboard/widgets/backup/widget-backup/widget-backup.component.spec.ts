@@ -158,7 +158,7 @@ describe('WidgetBackupComponent', () => {
 
     it('hides tiles when no data', async () => {
       expect(await widgetBackup.getTiles()).toBeNull();
-      expect(await widgetBackup.getEmptyCardMessage()).toBe('Backup to Cloud or another TrueNAS via links below');
+      expect(await widgetBackup.getEmptyCardMessage()).toBe('Backup to Cloud or another Tyrone Hfile via links below');
     });
   });
 

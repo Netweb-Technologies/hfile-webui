@@ -36,7 +36,6 @@ import { UserMenuComponent } from 'app/modules/layout/topbar/user-menu/user-menu
 import { TestDirective } from 'app/modules/test-id/test.directive';
 import { TruecommandButtonComponent } from 'app/modules/truecommand/truecommand-button.component';
 import { TruenasConnectService } from 'app/modules/truenas-connect/services/truenas-connect.service';
-import { TruenasConnectButtonComponent } from 'app/modules/truenas-connect/truenas-connect-button.component';
 import { ApiService } from 'app/modules/websocket/api.service';
 import { SystemGeneralService } from 'app/services/system-general.service';
 import { AppState } from 'app/store';
@@ -72,7 +71,7 @@ import { TruenasLogoComponent } from './truenas-logo/truenas-logo.component';
     TestDirective,
     TruecommandButtonComponent,
     TruenasLogoComponent,
-    TruenasConnectButtonComponent,
+    // TruenasConnectButtonComponent,
   ],
 })
 export class TopbarComponent implements OnInit {

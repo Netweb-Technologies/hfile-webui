@@ -93,7 +93,7 @@ export const dataProtectionRoutes: Routes = [{
     {
       path: 'cloud-backup',
       data: {
-        title: T('TrueCloud Backup Tasks'),
+        title: T('TyroneCloud Backup Tasks'),
         breadcrumb: null,
       },
       component: AllCloudBackupsComponent,

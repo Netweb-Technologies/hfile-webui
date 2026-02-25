@@ -1,83 +1,219 @@
 @import 'scss-imports/cssvars';
 
-.session-form-hold {
-  margin: 0 auto;
-  max-width: 480px;
-  position: relative;
-  width: 100%;
-
-  .mat-mdc-card-content {
-    padding: 0 !important;
-  }
-
-  >.mat-mdc-card {
-    border: 0;
-    margin: 0;
-  }
-}
-
-.login-form {
-  min-height: 100vh;
-}
-
 .page-wrap {
   align-items: center;
   background-color: var(--bg1);
   display: flex;
   height: 100vh;
+  justify-content: center;
+  overflow: hidden;
   padding: 0;
+  position: relative; // Required for pseudo-element positioning
+  width: 100vw;
+
+  &::before {
+    background-image: url('assets/images/signin/backgound.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    height: 120%;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 120%;
+    z-index: 0;
+  }
 }
 
-.copyright {
-  color: var(--alt-fg1);
-  font-size: 85%;
-  margin-bottom: 18px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.mat-mdc-card {
+.split-layout-container {
   background-color: var(--bg2);
-  color: var(--fg2);
-  padding: 0 0 18px !important;
-}
-
-.mat-mdc-card .mat-mdc-card-content>div {
-  padding: 0;
-}
-
-.card-bottom {
-  overflow: auto;
-  padding: 0 16px;
-}
-
-.form-container {
-  padding: 20px 32px 8px;
-}
-
-.logo-wrapper {
-  background-color: var(--bg2);
-
-  // Fallback for browsers that don't support image-set
-  background-image: url('assets/images/signin/stars-sky-800w.jpg');
-  background-image: image-set(url('assets/images/signin/stars-sky-400w.avif') 1x,
-  url('assets/images/signin/stars-sky-800w.avif') 2x,
-  url('assets/images/signin/stars-sky-1200w.avif') 3x);
-  background-size: cover;
-  border-bottom: solid 1px var(--lines);
-  height: 250px;
-
-  padding: 20% 0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 82vh;
+  max-width: 1240px;
+  overflow: hidden;
   position: relative;
+  width: 92vw;
+  z-index: 1;
+}
+
+.branding-panel {
+  align-items: center;
+  background-color: var(--bg1);
+  border-right: none;
+  display: flex;
+  flex: 1.1;
+  overflow: hidden;
+  padding: 80px;
+  position: relative;
+
+  &::before {
+    background-image: url('assets/images/signin/branding-overlay.svg');
+    
+    background-position: center;
+    
+    /* FIX 1: Stop the tiling/repeating */
+    background-repeat: no-repeat; 
+    
+    /* FIX 2: Make the image stretch to fill the entire panel */
+    background-size: cover;
+    content: '';
+    filter: blur(0.8px);
+    height: 100%;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0; // Stays at the bottom
+  }
+
+  .branding-inner {
+    position: relative;
+    width: 100%;
+    z-index: 2; // Higher than the ::before z-index
+  }
+
+  .brand-logo-large {
+    display: block;    // Ensures it sits on its own line above the text
+    height: auto;      // Maintains aspect ratio
+    margin-bottom: 24px; // Adds space between the logo and the hero text
+    width: 180px;
+    
+    // Ensure the SVG fill matches your branding
+    ::ng-deep svg {
+      fill: var(--fg1); 
+    }
+  }
+
+  .hero-text {
+    color: var(--fg1);
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin: 24px 0;
+
+    span {
+      border-radius: 4px;
+      display: inline-block;
+      padding: 0 4px;
+      position: relative;
+    }
+
+    .hl-cyan {
+      background-color: rgba(0, 188, 212, 0.25);
+      border-bottom: 2px solid rgba(0, 188, 212, 0.5);
+    }
+
+    .hl-amber {
+      background-color: rgba(255, 193, 7, 0.25);
+      border-bottom: 2px solid rgba(255, 193, 7, 0.5);
+    }
+
+    .hl-green {
+      background-color: rgba(76, 175, 80, 0.25);
+      border-bottom: 2px solid rgba(76, 175, 80, 0.5);
+    }
+  }
+
+  // Moved outside .hero-text to correctly target the form-panel context
+  [data-theme='dark'] &,
+  .form-panel & {
+    .hl-cyan { background-color: rgba(0, 188, 212, 0.4); }
+    .hl-amber { background-color: rgba(255, 193, 7, 0.4); }
+    .hl-green { background-color: rgba(76, 175, 80, 0.4); }
+  }
+  
+  .hero-subtext {
+    color: var(--alt-fg1);
+    font-size: 1.4rem;
+    margin-bottom: 48px;
+    max-width: 400px;
+  }
+
+  .visit-website a {
+    align-items: center;
+    border: 1px solid var(--lines);
+    border-radius: 24px;
+    color: var(--fg1);
+    display: inline-flex;
+    font-weight: 600;
+    padding: 12px 28px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--bg2);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/**
+ * RIGHT PANEL: The Login Form
+ */
+.form-panel {
+  align-items: center;
+  background-color: var(--bg2);
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 40px;
+}
+
+.session-form-hold {
+  margin: 0;
+  max-width: 420px;
+  position: relative;
+  width: 100%;
+
+  // Removes default card styling to blend with the panel
+  .mat-mdc-card {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .mat-mdc-card-content {
+    padding: 0 !important;
+  }
+}
+
+/**
+ * Logo area inside the login form
+ */
+.logo-wrapper {
+  background-color: transparent;
+  background-image: none !important; // Explicitly kill the stars-sky image
+  border-bottom: none;
+  height: auto;
+  padding: 20px 0 30px;
   text-align: center;
 
   .logo {
-    fill: #fff;
+    fill: var(--fg1);
     height: auto;
-    position: relative;
-    width: 256px;
-    z-index: 2;
+    width: 210px;
   }
+}
+
+.form-container {
+  padding: 0 32px 10px;
+}
+
+/**
+ * Global Styles preserved from original
+ */
+.copyright {
+  color: var(--alt-fg1);
+  font-size: 0.85rem;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .logo-with-animation-wrapper {
@@ -85,66 +221,38 @@
   display: flex;
   height: 100vh;
   justify-content: center;
-
-  >div {
+  
+  > div {
     animation: loading 2s linear infinite;
     opacity: 0.3;
     width: 100px;
-
-    ix-icon {
-      fill: var(--fg1);
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .page-wrap {
-    bottom: 0;
-    height: 100vh;
-    left: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100vw;
-  }
-
-  .mat-mdc-card {
-    min-height: 100vh;
-    top: 0;
-  }
-
-  .card-bottom {
-    padding: 0;
-  }
-
-  /* Not sure how to workaround browser bug.
-  *  Apparently 100vw is actually viewport width + scrollbar width
-  *  if vertical scrollbar is present
-  */
-  .page-wrap>* {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .session-progress {
-    position: fixed;
-    top: 0;
-  }
-
-  .logo-wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: 20% 0;
+    ix-icon { fill: var(--fg1); }
   }
 }
 
 .logging-in {
-  box-sizing: border-box;
   color: var(--fg2);
-  padding: 49px 16px 37px;
+  padding: 50px 0;
   text-align: center;
   width: 100%;
+}
+
+/**
+ * Responsive Logic: Stacks or hides the branding panel on smaller screens
+ */
+@media (max-width: 1000px) {
+  .branding-panel {
+    display: none;
+  }
+  
+  .page-wrap .split-layout-container {
+    border: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .form-panel {
+    padding: 20px;
+  }
 }

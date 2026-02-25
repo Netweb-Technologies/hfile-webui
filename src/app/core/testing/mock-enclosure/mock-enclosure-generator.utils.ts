@@ -31,14 +31,14 @@ export class MockEnclosureGenerator {
   enhanceSystemInfoResponse(response: SystemInfo): SystemInfo {
     return {
       ...response,
-      platform: `TRUENAS-${this.config.controllerModel}`,
-      system_product: `TRUENAS-${this.config.controllerModel}`,
-      system_manufacturer: 'TrueNAS',
+      platform: `Tyrone HFile Storage System-${this.config.controllerModel}`,
+      system_product: `Tyrone HFile Storage System-${this.config.controllerModel}`,
+      system_manufacturer: 'Tyrone HFile Storage System',
       remote_info: response.remote_info
         ? {
             ...response.remote_info,
-            platform: `TRUENAS-${this.config.controllerModel}`,
-            system_product: `TRUENAS-${this.config.controllerModel}`,
+            platform: `Tyrone HFile Storage System-${this.config.controllerModel}`,
+            system_product: `Tyrone HFile Storage System-${this.config.controllerModel}`,
           }
         : null,
     };

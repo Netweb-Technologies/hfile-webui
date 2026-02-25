@@ -5,7 +5,7 @@
   <mat-toolbar-row class="title-bar">
     <h3>{{ 'Support' | translate }}</h3>
 
-    <button
+    <!-- <button
       *ixRequiresRoles="requiredRoles"
       mat-button
       color="default"
@@ -14,7 +14,7 @@
       (click)="updateLicense()"
     >
       {{ licenseButtonText | translate }}
-    </button>
+    </button> -->
   </mat-toolbar-row>
 
   <mat-card-content>
@@ -35,7 +35,6 @@
           <ix-sys-info
             [hasLicense]="hasLicense"
             [systemInfo]="systemInfo"
-            [licenseInfo]="licenseInfo"
           ></ix-sys-info>
 
           <div class="links-wrapper">
@@ -45,7 +44,7 @@
               </div>
             }
           </div>
-          @if (hasLicense) {
+          <!-- @if (hasLicense) {
             <div>
               <ix-slide-toggle
                 *ixRequiresRoles="requiredRoles"
@@ -54,11 +53,11 @@
                 [label]="'This is a production system' | translate"
               ></ix-slide-toggle>
             </div>
-          }
+          } -->
 
           <!-- ACTION BUTTONS -->
           <div class="actions button-group">
-            @if (hasLicense) {
+            <!-- @if (hasLicense) {
               <button
                 mat-button
                 color="default"
@@ -110,7 +109,7 @@
                   </button>
                 }
               </ng-container>
-            }
+            } -->
 
             <ix-save-debug-button></ix-save-debug-button>
           </div>

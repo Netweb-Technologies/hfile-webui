@@ -85,15 +85,9 @@
           </mat-list-item>
 
           <mat-list-item>
-            <strong>{{ 'Edition' | translate }}:</strong>
+            <strong>{{ 'Codename' | translate }}:</strong>
             @if (isLoaded()) {
-              <span>
-                @if (isEnterprise()) {
-                  {{ 'Enterprise' | translate }}
-                } @else {
-                  {{ 'Community' | translate }}
-                }
-              </span>
+              <span> Obelisk </span>
             } @else {
               <ng-container *ngTemplateOutlet="skeletonLoader"></ng-container>
             }
@@ -172,7 +166,7 @@
 
           @if (!isEnterprise()) {
             <mat-list-item class="use-enterprise">
-              <ix-use-enterprise-marketing-link></ix-use-enterprise-marketing-link>
+              <!-- <ix-use-enterprise-marketing-link></ix-use-enterprise-marketing-link> -->
             </mat-list-item>
           }
         </mat-list>

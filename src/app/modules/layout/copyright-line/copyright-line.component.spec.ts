@@ -36,9 +36,9 @@ describe('CopyrightLineComponent', () => {
     store$.refreshState();
     spectator.detectChanges();
 
-    expect(spectator.fixture.nativeElement).toHaveText(`TrueNAS®  © ${buildYear} iXsystems, Inc. dba  TrueNAS`);
-    expect(spectator.fixture.nativeElement).toHaveText('iXsystems, Inc');
-    expect(spectator.query('a')).toHaveAttribute('href', 'https://truenas.com/testdrive');
+    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Hfile Storage System © ${buildYear} Netweb Technologies India Ltd`);
+    expect(spectator.fixture.nativeElement).toHaveText('Netweb Technologies India Ltd');
+    expect(spectator.query('a')).toHaveAttribute('href', 'https://www.netwebindia.com/');
   });
 
   it('shows copyright line with product type and year of build', () => {
@@ -46,9 +46,9 @@ describe('CopyrightLineComponent', () => {
     store$.refreshState();
     spectator.detectChanges();
 
-    expect(spectator.fixture.nativeElement).toHaveText(`TrueNAS® Community Edition  © ${buildYear} iXsystems, Inc. dba  TrueNAS`);
-    expect(spectator.fixture.nativeElement).toHaveText('iXsystems, Inc');
-    expect(spectator.query('a')).toHaveAttribute('href', 'https://truenas.com/testdrive');
+    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Hfile Storage System © ${buildYear} Netweb Technologies India Ltd`);
+    expect(spectator.fixture.nativeElement).toHaveText('Netweb Technologies India Ltd');
+    expect(spectator.query('a')).toHaveAttribute('href', 'https://www.netwebindia.com/');
   });
 
   it('shows copyright line with enterprise product type and year of build', () => {
@@ -56,8 +56,8 @@ describe('CopyrightLineComponent', () => {
     store$.refreshState();
     spectator.detectChanges();
 
-    expect(spectator.fixture.nativeElement).toHaveText(`TrueNAS® Enterprise  © ${buildYear} iXsystems, Inc. dba  TrueNAS`);
-    expect(spectator.fixture.nativeElement).toHaveText('iXsystems, Inc');
-    expect(spectator.query('a')).toHaveAttribute('href', 'https://truenas.com/production');
+    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Hfile Storage System  © ${buildYear} Netweb Technologies India Ltd`);
+    expect(spectator.fixture.nativeElement).toHaveText('Netweb Technologies India Ltd');
+    expect(spectator.query('a')).toHaveAttribute('href', 'https://www.netwebindia.com/');
   });
 });

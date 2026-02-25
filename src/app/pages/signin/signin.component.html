@@ -1,57 +1,72 @@
 <div class="page-wrap login-form">
-  <div class="session-form-hold">
-    @if ((isConnected$ | async) || (!(isConnected$ | async) && (isConnectedDelayed$ | async) !== null)) {
-      <mat-progress-bar
-        value="0"
-        class="session-progress"
-        [mode]="(hasLoadingIndicator$ | async) ? 'indeterminate' : 'determinate'"
-      ></mat-progress-bar>
-    }
-
-    @if (!(isConnected$ | async) && (isConnectedDelayed$ | async) !== null) {
-      <mat-card>
-        <mat-card-content>
-          <ix-disconnected-message></ix-disconnected-message>
-        </mat-card-content>
-      </mat-card>
-    } @else if (isConnected$ | async) {
-        @if (hasAuthToken && (isTokenWithinTimeline$ | async)) {
-          <mat-card>
-            <mat-card-content>
-              <h3 class="logging-in">{{ 'Logging in...' | translate }}</h3>
-            </mat-card-content>
-          </mat-card>
-        } @else {
-          <mat-card>
-            <mat-card-content>
-              <div>
-                <div class="logo-wrapper">
-                  <ix-icon name="ix-truenas-logo" class="logo" [fullSize]="true"></ix-icon>
-                </div>
-
-                <div class="card-bottom">
-                  <div class="form-container">
-                    @if (wasAdminSet$ | async) {
-                      <ix-signin-form [disabled]="!(canLogin$ | async)"></ix-signin-form>
-                    } @else {
-                      <ix-set-admin-password-form></ix-set-admin-password-form>
-                    }
-                  </div>
-
-                  <ix-true-command-status></ix-true-command-status>
-
-                  <ix-copyright-line class="copyright" [skipType]="true"></ix-copyright-line>
-                </div>
-              </div>
-            </mat-card-content>
-          </mat-card>
-        }
-    } @else {
-      <div class="logo-with-animation-wrapper">
-        <div>
-          <ix-icon name="ix-truenas-logo-mark" [fullSize]="true"></ix-icon>
-        </div>
+  <div class="split-layout-container">
+    
+    <div class="branding-panel">
+      <div class="branding-inner">
+        <ix-icon name="ix-truenas-logo" class="brand-logo-large" [fullSize]="true"></ix-icon>
+        <h2 class="hero-text">
+          <span class="hl-cyan">Secure</span>, 
+          <span class="hl-amber">Scalable</span> 
+          <br>data platform engineered for 
+          <span class="hl-green">High Perfomance!</span>
+        </h2>
       </div>
-    }
+    </div>
+
+    <div class="form-panel">
+      <div class="session-form-hold">
+        @if ((isConnected$ | async) || (!(isConnected$ | async) && (isConnectedDelayed$ | async) !== null)) {
+          <mat-progress-bar
+          style="display: none;"
+          [mode]="(hasLoadingIndicator$ | async) ? 'indeterminate' : 'determinate'"
+        ></mat-progress-bar>
+        }
+
+        @if (!(isConnected$ | async) && (isConnectedDelayed$ | async) !== null) {
+          <mat-card>
+            <mat-card-content>
+              <ix-disconnected-message></ix-disconnected-message>
+            </mat-card-content>
+          </mat-card>
+        } @else if (isConnected$ | async) {
+            @if (hasAuthToken && (isTokenWithinTimeline$ | async)) {
+              <mat-card>
+                <mat-card-content>
+                  <h3 class="logging-in">{{ 'Logging in...' | translate }}</h3>
+                </mat-card-content>
+              </mat-card>
+            } @else {
+              <mat-card>
+                <mat-card-content>
+                  <div>
+                    <div class="logo-wrapper">
+                      <ix-icon name="ix-truenas-logo" class="logo" [fullSize]="true"></ix-icon>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="form-container">
+                        @if (wasAdminSet$ | async) {
+                          <ix-signin-form [disabled]="!(canLogin$ | async)"></ix-signin-form>
+                        } @else {
+                          <ix-set-admin-password-form></ix-set-admin-password-form>
+                        }
+                      </div>
+                      <ix-true-command-status></ix-true-command-status>
+                      <ix-copyright-line class="copyright" [skipType]="true"></ix-copyright-line>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            }
+        } @else {
+          <div class="logo-with-animation-wrapper">
+            <div>
+              <ix-icon name="ix-truenas-logo" [fullSize]="true"></ix-icon>
+            </div>
+          </div>
+        }
+        </div>
+    </div>
+
   </div>
 </div>

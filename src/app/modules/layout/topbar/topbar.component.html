@@ -19,7 +19,7 @@
       <ix-truenas-logo></ix-truenas-logo>
 
       <div class="topbar-mobile-footer" [class.has-console-footer]="hasConsoleFooter$ | async">
-        <span
+        <!-- <span
           [matTooltip]="'Send Feedback' | translate"
         >
           <button
@@ -31,12 +31,12 @@
           >
             <ix-icon name="mdi-emoticon"></ix-icon>
           </button>
-        </span>
+        </span> -->
 
         <ix-truecommand-button></ix-truecommand-button>
-        @if (hasTncConfig()) {
+        <!-- @if (hasTncConfig()) {
           <ix-truenas-connect-button></ix-truenas-connect-button>
-        }
+        } -->
 
         @if (hasRebootRequiredReasons()) {
           <button

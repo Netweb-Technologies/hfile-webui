@@ -35,15 +35,15 @@
         </div>
       } @else {
         <div class="sidenav-copyright-txt">
-          @if (hostname$ | async; as hostname) {
+          <!-- @if (hostname$ | async; as hostname) {
             <div
               class="hostname-label"
               matTooltipPosition="above"
               [matTooltip]="'Hostname: {hostname}' | translate: { hostname }"
             >{{ hostname }}</div>
-          }
+          } -->
 
-          <p class="product-type">
+          <!-- <p class="product-type">
             @if (!isEnterprise()) {
               <a
                 ixTest="navigate-to-enterprise-marketing-link"
@@ -57,7 +57,7 @@
                 {{ productTypeText }}
               </span>
             }
-          </p>
+          </p> -->
 
           <ix-copyright-line class="copyright-line"></ix-copyright-line>
         </div>

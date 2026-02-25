@@ -6,14 +6,14 @@ const buildYear = environment.buildYear;
 
 describe('getCopyrightHtml', () => {
   it('general: copyright text', () => {
-    expect(getCopyrightHtml()).toBe(`TrueNAS® <br /> © ${buildYear}`);
+    expect(getCopyrightHtml()).toBe(`Tyrone HFile Storage System <br /> © ${buildYear}`);
   });
 
   it('community edition: copyright text', () => {
-    expect(getCopyrightHtml(ProductType.CommunityEdition)).toBe(`TrueNAS® Community Edition <br /> © ${buildYear}`);
+    expect(getCopyrightHtml(ProductType.CommunityEdition)).toBe(`Tyrone HFile Storage System <br /> © ${buildYear}`);
   });
 
   it('enterprise: copyright text', () => {
-    expect(getCopyrightHtml(ProductType.Enterprise)).toBe(`TrueNAS® Enterprise <br /> © ${buildYear}`);
+    expect(getCopyrightHtml(ProductType.Enterprise)).toBe(`Tyrone HFile Storage System <br /> © ${buildYear}`);
   });
 });
