@@ -6,14 +6,14 @@ const buildYear = environment.buildYear;
 
 describe('getCopyrightHtml', () => {
   it('general: copyright text', () => {
-    expect(getCopyrightHtml()).toBe(`Tyrone HFile Storage System <br /> © ${buildYear}`);
+    expect(getCopyrightHtml()).toBe(`Tyrone Verta Pro <br /> © ${buildYear}`);
   });
 
   it('community edition: copyright text', () => {
-    expect(getCopyrightHtml(ProductType.CommunityEdition)).toBe(`Tyrone HFile Storage System <br /> © ${buildYear}`);
+    expect(getCopyrightHtml(ProductType.CommunityEdition)).toBe(`Tyrone Verta Pro <br /> © ${buildYear}`);
   });
 
   it('enterprise: copyright text', () => {
-    expect(getCopyrightHtml(ProductType.Enterprise)).toBe(`Tyrone HFile Storage System <br /> © ${buildYear}`);
+    expect(getCopyrightHtml(ProductType.Enterprise)).toBe(`Tyrone Verta Pro <br /> © ${buildYear}`);
   });
 });

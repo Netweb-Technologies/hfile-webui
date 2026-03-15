@@ -34,7 +34,6 @@ import { topbarDialogPosition } from 'app/modules/layout/topbar/topbar-dialog-po
 import { toolBarElements } from 'app/modules/layout/topbar/topbar.elements';
 import { UserMenuComponent } from 'app/modules/layout/topbar/user-menu/user-menu.component';
 import { TestDirective } from 'app/modules/test-id/test.directive';
-import { TruecommandButtonComponent } from 'app/modules/truecommand/truecommand-button.component';
 import { TruenasConnectService } from 'app/modules/truenas-connect/services/truenas-connect.service';
 import { ApiService } from 'app/modules/websocket/api.service';
 import { SystemGeneralService } from 'app/services/system-general.service';
@@ -69,7 +68,7 @@ import { TruenasLogoComponent } from './truenas-logo/truenas-logo.component';
     TranslateModule,
     UiSearchDirective,
     TestDirective,
-    TruecommandButtonComponent,
+    // TruecommandButtonComponent,
     TruenasLogoComponent,
     // TruenasConnectButtonComponent,
   ],

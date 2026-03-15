@@ -78,7 +78,7 @@ export class SupportCardComponent implements OnInit {
   hasLicense = false;
   productImageSrc = signal<string | null>(null);
   licenseInfo: LicenseInfoInSupport | null = null;
-  links = [helptext.docHub, helptext.forums, helptext.licensing];
+  links = [helptext.docHub, helptext.forums];
   ticketText = helptext.ticket;
   proactiveText = helptext.proactive.title;
 

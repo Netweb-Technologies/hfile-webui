@@ -65,7 +65,7 @@ describe('GlobalSearchComponent', () => {
             selector: selectSystemInfoState,
             value: {
               systemInfo: {
-                version: 'Tyrone HFile Storage System-24.10.0-MASTER-20240324-065034',
+                version: 'Tyrone Verta Pro-24.10.0-MASTER-20240324-065034',
               },
             } as SystemInfoState,
           },

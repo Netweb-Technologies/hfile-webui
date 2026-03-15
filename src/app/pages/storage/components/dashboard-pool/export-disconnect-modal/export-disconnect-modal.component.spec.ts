@@ -172,7 +172,7 @@ describe('ExportDisconnectModalComponent', () => {
     const form = await loader.getHarness(IxFormHarness);
     await form.fillForm({
       'Confirm Export/Disconnect': true,
-      'Delete saved configurations from TrueNAS?': true,
+      'Delete saved configurations from Tyrone Verta Pro?': true,
       'Destroy data on this pool?': false,
     });
 
@@ -199,7 +199,7 @@ describe('ExportDisconnectModalComponent', () => {
 
         expect(values).toEqual({
           'Confirm Export/Disconnect': false,
-          'Delete saved configurations from TrueNAS?': true,
+          'Delete saved configurations from Tyrone Verta Pro?': true,
           'Destroy data on this pool?': false,
         });
       });

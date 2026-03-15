@@ -31,14 +31,14 @@ export class MockEnclosureGenerator {
   enhanceSystemInfoResponse(response: SystemInfo): SystemInfo {
     return {
       ...response,
-      platform: `Tyrone HFile Storage System-${this.config.controllerModel}`,
-      system_product: `Tyrone HFile Storage System-${this.config.controllerModel}`,
-      system_manufacturer: 'Tyrone HFile Storage System',
+      platform: `Tyrone Verta Pro-${this.config.controllerModel}`,
+      system_product: `Tyrone Verta Pro-${this.config.controllerModel}`,
+      system_manufacturer: 'Tyrone Verta Pro',
       remote_info: response.remote_info
         ? {
             ...response.remote_info,
-            platform: `Tyrone HFile Storage System-${this.config.controllerModel}`,
-            system_product: `Tyrone HFile Storage System-${this.config.controllerModel}`,
+            platform: `Tyrone Verta Pro-${this.config.controllerModel}`,
+            system_product: `Tyrone Verta Pro-${this.config.controllerModel}`,
           }
         : null,
     };

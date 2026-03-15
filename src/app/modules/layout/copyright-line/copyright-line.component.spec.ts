@@ -36,7 +36,7 @@ describe('CopyrightLineComponent', () => {
     store$.refreshState();
     spectator.detectChanges();
 
-    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Hfile Storage System © ${buildYear} Netweb Technologies India Ltd`);
+    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Verta Pro Storage System © ${buildYear} Netweb Technologies India Ltd`);
     expect(spectator.fixture.nativeElement).toHaveText('Netweb Technologies India Ltd');
     expect(spectator.query('a')).toHaveAttribute('href', 'https://www.netwebindia.com/');
   });
@@ -46,7 +46,7 @@ describe('CopyrightLineComponent', () => {
     store$.refreshState();
     spectator.detectChanges();
 
-    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Hfile Storage System © ${buildYear} Netweb Technologies India Ltd`);
+    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Verta Pro Storage System © ${buildYear} Netweb Technologies India Ltd`);
     expect(spectator.fixture.nativeElement).toHaveText('Netweb Technologies India Ltd');
     expect(spectator.query('a')).toHaveAttribute('href', 'https://www.netwebindia.com/');
   });
@@ -56,7 +56,7 @@ describe('CopyrightLineComponent', () => {
     store$.refreshState();
     spectator.detectChanges();
 
-    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Hfile Storage System  © ${buildYear} Netweb Technologies India Ltd`);
+    expect(spectator.fixture.nativeElement).toHaveText(`Tyrone Verta Pro Storage System  © ${buildYear} Netweb Technologies India Ltd`);
     expect(spectator.fixture.nativeElement).toHaveText('Netweb Technologies India Ltd');
     expect(spectator.query('a')).toHaveAttribute('href', 'https://www.netwebindia.com/');
   });

@@ -14,7 +14,7 @@ describe('DisconnectedMessageComponent', () => {
   });
 
   it('shows "Connecting to TrueNAS" message', () => {
-    expect(spectator.fixture.nativeElement).toHaveText('Connecting to TrueNAS');
-    expect(spectator.fixture.nativeElement).toHaveText('Make sure the TrueNAS system is powered on and connected to the network.');
+    expect(spectator.fixture.nativeElement).toHaveText('Connecting to Tyrone Verta Pro');
+    expect(spectator.fixture.nativeElement).toHaveText('Make sure the Tyrone Verta Pro system is powered on and connected to the network.');
   });
 });
